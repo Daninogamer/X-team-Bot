@@ -1,0 +1,245 @@
+
+//message
+        client.on("messageDelete", function(message, channel) {
+            const embed = new MessageEmbed()
+            .setTitle("**__MESSAGE LOG DELETE__**")
+            .setTimestamp()
+            .setColor("RED")
+            .addField("Autore:", `\`${message.author}\``)
+            .addField("Contenuto:", `\`${message.content}\``)
+            .setTimestamp();
+
+            const channel1 = client.channels.cache.get('958045610139848765')
+            channel1.send(embed)
+            });
+
+            client.on("message", function(message, channel) {
+                if(message.author.bot) return;
+                const embed = new MessageEmbed()
+                .setTitle("**__MESSAGE LOG SEND__**")
+                .setTimestamp()
+                .setColor("GREEN")
+                .addField("Autore:", `\`${message.author.tag}\``)
+                .addField("ID:", `\`${message.author}\``)
+                .addField("Contenuto:", `\`${message.content}\``)
+                .addField("Alle:", `\`${message.createdAt}\``)
+                .setTimestamp();
+    
+                const channel1 = client.channels.cache.get('958045610139848765')
+                channel1.send(embed)
+                });
+            
+            //emoji log
+            
+
+            client.on("emojiCreate", function (emoji) {
+                const embed = new MessageEmbed()
+                .setTitle("**__EMOJI LOG CREATE__**")
+                .setTimestamp()
+                .setColor("GREEN")
+                .addField("Emoji:", `\`${emoji}\``)
+                .addField("Nome:", `\`${emoji.name}\``)
+                .addField("ID:", `\`${emoji.id}\``)
+                .addField("URL:", `\`${emoji.url}\``)
+                .addField("Alle:", `\`${emoji.createdAt}\``)
+                .setTimestamp();
+    
+                const channel1 = client.channels.cache.get('957970741071085659')
+                channel1.send(embed)
+                });
+                
+           
+      
+            client.on("emojiDelete", function (emoji) {
+                const embed = new MessageEmbed()
+                .setTitle("**__EMOJI LOG DELETE__**")
+                .setTimestamp()
+                .setColor("RED")
+                .addField("Emoji:", `\`${emoji}\``)
+                .addField("Nome:", `\`${emoji.name}\``)
+                .setTimestamp();
+    
+                const channel1 = client.channels.cache.get('957970741071085659')
+                channel1.send(embed)
+                });
+      
+
+            //member
+            client.on("guildMemberAdd", function (member, message) {
+                const embed = new MessageEmbed()
+                .setTitle("**USER JOINED**")
+                .setTimestamp()
+                .setColor("GREEN")
+                .addField("Utente:", `\`${member.user}\``)
+                .addField("ID:", `\`${member.user.id}\``)
+                .addField("Tag:", `\`${member.user.tag}\``)
+                .setTimestamp()
+                .setImage(member.user.displayAvatarURL({dynamic: true}))
+              
+    
+                const channel1 = client.channels.cache.get('958036170938384395')
+                channel1.send(embed)
+            });
+
+                
+                client.on("guildMemberRemove", (member) => {
+                    const channelid = "958036170938384395";
+            
+                    const message = new MessageEmbed()
+                    .setTitle("**USER LEFT**")
+                    .setTimestamp()
+                    .setColor("RED")
+                    .addField("Utente:", `\`${member.user}\``)
+                    .addField("ID:", `\`${member.user.id}\``)
+                    .addField("Tag:", `\`${member.user.tag}\``)
+                    .setTimestamp()
+                    .setImage(member.user.displayAvatarURL({dynamic: true}))
+                    
+                    const channel = member.guild.channels.cache.get(channelid);
+                    channel.send(message);
+                });
+
+      
+
+            //ban log
+            client.on("guildBanAdd", function (member, user) {
+                const banEmbed = new MessageEmbed()
+                .setTitle("**__BAN LOG__**")
+                .setColor('RED')
+                .addField(`**Utente:**`, `\`${user}\``)
+                .addField(`**ID:**`, `\`${user.id}\``)
+                .addField(`**TAG:**`, `${user.tag}`)
+                .setTimestamp()
+                const channel1 = client.channels.cache.get('957312468768657569')
+                channel1.send(banEmbed)
+            });
+      
+            client.on("guildBanRemove", function (guild, user) {
+                const banEmbed = new MessageEmbed()
+                .setTitle("**__BAN LOG__**")
+                .setColor('GREEN')
+                .addField(`**Utente:**`, `\`${user}\``)
+                .addField(`**ID:**`, `\`${user.id}\``)
+                .addField(`**TAG:**`, `${user.tag}`)
+                .setTimestamp()
+                const channel1 = client.channels.cache.get('957312468768657569')
+                channel1.send(banEmbed)
+            });
+
+            //role log
+            client.on("roleCreate", function(role) {
+                
+                const embed = new MessageEmbed()
+                .setTitle("**__ROLE LOG CREATE__**")
+                .setTimestamp()
+                .setColor("GREEN")
+                .addField("Nome:", `\`${role.name}\``)
+                .addField("ID:", `\`${role.id}\``)
+                .addField("Colore:", `\`${role.hexColor}\``)
+                .addField("Posizione:", `\`${role.position}\``)
+                .addField("Creato Alle:", `\`${role.createdAt}\``)
+                .setTimestamp();
+                const channel1 = client.channels.cache.get('958057623662526515')
+                channel1.send(embed)
+                });
+
+                client.on("roleDelete", function(role) {
+
+                    const embed = new MessageEmbed()
+                    .setTitle("**__ROLE LOG DELETE__**")
+                    .setTimestamp()
+                    .setColor("RED")
+                    .addField("Nome:", `\`${role.name}\``)
+                    .addField("Colore:", `\`${role.hexColor}\``)
+                    .setTimestamp();
+                const channel1 = client.channels.cache.get('958057623662526515')
+                    channel1.send(embed)
+                });
+            
+
+    //reactionrole
+
+    client.on("message", message => {
+        if (message.content == "$danielèbello") {
+            const embed = new MessageEmbed()
+                .setTitle("ACCESSO AL SERVER")
+                .setDescription("Salve <@&956290599730950144> per potere avere accesso al server devi cliccare l'emoji ✅ che si trova qua sotto, così che ti darà il ruolo <@&956290597373751386>")
+    
+            message.channel.send(embed)
+                .then(msg => {
+
+                    msg.react("✅")
+                })
+        }
+    })
+    client.on("messageReactionAdd", async function (messageReaction, user) {
+        if (user.bot) return 
+    
+        if (messageReaction.message.partial) await messageReaction.message.fetch();
+    
+        if (messageReaction.message.id == "958016514739535922") { 
+            if (messageReaction._emoji.name == "✅") {
+                var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
+                utente.roles.add("956290597373751386");
+                utente.roles.add("957989747853238363"); 
+                utente.roles.add("956290598233575455"); 
+
+                utente.roles.remove("956290599730950144")
+            }  
+        }
+    })
+
+    client.on('guildMemberAdd', member => {
+        //Autoruolo
+    const ruolo = member.guild.roles.cache.find(r => r.name === '👤 - Civile Non Verificato');
+    member.roles.add(ruolo);
+});
+
+    
+    //Member count
+    const snipes = new Collection()
+    
+    client.on("guildMemberAdd", member => {
+        var canale = client.channels.cache.get("957308158617976842")
+        canale.setName("👫| Membri: " + member.guild.memberCount) //Impostare il nome del canale
+    });
+    client.on("guildMemberRemove", member => {
+        var canale = client.channels.cache.get("957308158617976842")
+       canale.setName("👫| Membri: " + member.guild.memberCount) //Impostare il nome del canale
+    });
+
+
+
+
+    //eseguzione comandi
+    client.on('message', async message =>{
+        if(message.author.bot) return;
+        if(!message.content.startsWith(prefix)) return;
+        if(!message.guild) return;
+        if(!message.member) message.member = await message.guild.fetchMember(message);
+        const args = message.content.slice(prefix.length).trim().split(/ +/g);
+        const cmd = args.shift().toLowerCase();
+        if(cmd.length == 0 ) return;
+        let command = client.commands.get(cmd)
+        if(!command) command = client.commands.get(client.aliases.get(cmd));
+        if(command) command.execute(client, message, args, Discord) 
+    
+    const logembed = new MessageEmbed()
+    .setColor("RANDOM")
+    .setTitle("__**LOG COMANDI**__")
+    .setTimestamp()
+    .addField(`**Utente:**`, `\`${message.author.tag}\``)
+    .addField(`**Comando:**`, `\`${command.name}\``)
+    .addField(`**Canale:**`, `\`${message.channel}\``)
+
+
+    const channellog = client.channels.cache.get('957646196766289990');
+    if(message.author.bot) return;
+    channellog.send(logembed);
+    
+    })
+
+
+
+
+client.login(token)
