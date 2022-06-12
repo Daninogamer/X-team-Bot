@@ -184,15 +184,15 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
         }
         if (messageReaction._emoji.name == "🕹️") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.add("985171921832386610");
+            utente.roles.add("985171811161493565");
         }
         if (messageReaction._emoji.name == "🧱") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.add("985171811161493565");
+            utente.roles.add("985171863225401356");
         }
         if (messageReaction._emoji.name == "🎮") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.add("985171863225401356"); //Settare ruolo
+            utente.roles.add("985171921832386610"); //Settare ruolo
         }
         if (messageReaction._emoji.name == "🔫") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
@@ -248,15 +248,15 @@ client.on("messageReactionRemove", async function (messageReaction, user) {
         }
         if (messageReaction._emoji.name == "🕹️") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.remove("985171921832386610");
+            utente.roles.remove("985171811161493565");
         }
         if (messageReaction._emoji.name == "🧱") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.remove("985171811161493565");
+            utente.roles.remove("985171863225401356");
         }
         if (messageReaction._emoji.name == "🎮") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.remove("985171863225401356");
+            utente.roles.remove("985171921832386610");
         }
         if (messageReaction._emoji.name == "🔫") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
