@@ -157,7 +157,7 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
 
     if (messageReaction.message.partial) await messageReaction.message.fetch();
 
-    if (messageReaction.message.id == "985208857854869574") { //Settare id messaggio
+    if (messageReaction.message.id == "985551868354781314") { //Settare id messaggio
         if (messageReaction._emoji.name == "🔴") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.add("985156710580777030"); //Settare ruolo
@@ -222,7 +222,7 @@ client.on("messageReactionRemove", async function (messageReaction, user) {
 
     if (messageReaction.message.partial) await messageReaction.message.fetch();
 
-    if (messageReaction.message.id == "985208857854869574") {
+    if (messageReaction.message.id == "985551868354781314") {
         if (messageReaction._emoji.name == "🔴") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.remove("985156710580777030");
