@@ -14,7 +14,7 @@ module.exports = {
             .setDescription(`Tag del bot **${client.user.tag}**`)
             .setColor('YELLOW')
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
-            .addField('Server', 'X Team')
+            .addField('Server', 'Caserma X')
             .addField('Utenti', numeroUtenti, true)
             .addField('Uptime', ms(client.uptime), true)
             .addField('node.js', process.version, true)
