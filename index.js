@@ -22,6 +22,47 @@ client.once('ready', () => {
 })
     
 
+//member count add
+const snipes = new Collection()
+    
+client.on("guildMemberAdd", member => {
+    var canale = client.channels.cache.get("985466944444588063")
+    canale.setName("👫| Tutti i Membri: " + member.guild.memberCount) //Impostare il nome del canale
+});
+client.on("guildMemberAdd", message => {
+    const membri = message.guild.members.cache;
+    var canale = client.channels.cache.get("985468675438039102")
+    canale.setName("👨|  Membri: " + `${membri.filter(m => !m.user.bot).size}`) //Impostare il nome del canale
+
+});
+
+client.on("guildMemberAdd", message => {
+    const membri = message.guild.members.cache;
+    var canale = client.channels.cache.get("985470159231791104")
+    canale.setName("🤖|  Bots: " + `${membri.filter(m => m.user.bot).size}`, true) //Impostare il nome del canale
+
+});
+
+// member count remove
+client.on("guildMemberRemove", message => {
+    const membri = message.guild.members.cache;
+    var canale = client.channels.cache.get("985468675438039102")
+    canale.setName("👨|  Membri: " + `${membri.filter(m => !m.user.bot).size}`) //Impostare il nome del canale
+
+});
+
+client.on("guildMemberRemove", message => {
+    const membri = message.guild.members.cache;
+    var canale = client.channels.cache.get("985470159231791104")
+    canale.setName("🤖|  Bots: " + `${membri.filter(m => m.user.bot).size}`, true) //Impostare il nome del canale
+
+});
+
+client.on("guildMemberRemove", member => {
+    var canale = client.channels.cache.get("985466944444588063")
+   canale.setName("👫| Tutti i Membri: " + member.guild.memberCount) //Impostare il nome del canale
+});
+
 
 const status = [
     `| $help |`,
@@ -140,7 +181,7 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
         }
         if (messageReaction._emoji.name == "🧱") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.add("985156983751593994");
+            utente.roles.add("985171811161493565");
         }
         if (messageReaction._emoji.name == "🎮") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
