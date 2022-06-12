@@ -22,6 +22,9 @@ client.once('ready', () => {
 })
     
 
+
+
+
 //member count add
 const snipes = new Collection()
     
@@ -137,9 +140,9 @@ const { channel } = require('diagnostics_channel')
                 msg.react("🟢")
                 msg.react("🔵")
                 msg.react("🟣")
+                msg.react("🕹️")
                 msg.react("🧱")
                 msg.react("🎮")
-                msg.react("🕹️")
                 msg.react("🔫")
                 msg.react("🔪")
                 msg.react("☠️")
@@ -179,6 +182,10 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.add("985119618358210580"); //Settare ruolo
         }
+        if (messageReaction._emoji.name == "🕹️") {
+            var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
+            utente.roles.add("985171921832386610");
+        }
         if (messageReaction._emoji.name == "🧱") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.add("985171811161493565");
@@ -186,10 +193,6 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
         if (messageReaction._emoji.name == "🎮") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.add("985171863225401356"); //Settare ruolo
-        }
-        if (messageReaction._emoji.name == "🕹️") {
-            var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.add("985171921832386610");
         }
         if (messageReaction._emoji.name == "🔫") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
@@ -243,6 +246,10 @@ client.on("messageReactionRemove", async function (messageReaction, user) {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.remove("985119618358210580");
         }
+        if (messageReaction._emoji.name == "🕹️") {
+            var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
+            utente.roles.remove("985171921832386610");
+        }
         if (messageReaction._emoji.name == "🧱") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.remove("985171811161493565");
@@ -250,10 +257,6 @@ client.on("messageReactionRemove", async function (messageReaction, user) {
         if (messageReaction._emoji.name == "🎮") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
             utente.roles.remove("985171863225401356");
-        }
-        if (messageReaction._emoji.name == "🕹️") {
-            var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.remove("985171921832386610");
         }
         if (messageReaction._emoji.name == "🔫") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
