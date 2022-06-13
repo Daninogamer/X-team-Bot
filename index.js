@@ -75,7 +75,6 @@ const status = [
 
     const left = require("./commands/info/left");
 const command = require('./handlers/command')
-const { channel } = require('diagnostics_channel')
 
     left(client);
 
