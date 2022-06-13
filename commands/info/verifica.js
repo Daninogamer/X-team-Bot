@@ -22,7 +22,10 @@ client.on("messageReactionAdd", async function (messageReaction, user) {
     if (messageReaction.message.id == "985561084406685769") { //Settare id messaggio
         if (messageReaction._emoji.name == "✅") {
             var utente = messageReaction.message.guild.members.cache.find(x => x.id == user.id);
-            utente.roles.add("984868027361271828"); //Settare ruolo
+            utente.roles.add("984868027361271828");
+            utente.roles.add("985492890979561553");
+            utente.roles.add("985492890774040606");
+            utente.roles.add("985492536145608744"); //Settare ruolo
             utente.roles.remove("985549568492056626")
         }
     }
