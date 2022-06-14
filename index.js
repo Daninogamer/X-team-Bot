@@ -105,5 +105,34 @@ const command = require('./handlers/command')
     channellog.send(logembed);
     })
 
+    client.on("voiceStateUpdate", async (oldMember, newMember) => {
+        try {
+          const { createChannel, deleteChannel } = require("./functions/voice");
+          if (oldMember.channel === null && newMember.channel !== null) {
+            if (newMember.channel.id == "986317720733753394")
+              await createChannel(newMember);
+          } else if (newMember.channel === null) {
+            await deleteChannel(oldMember);
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      });
+
+      client.on("voiceStateUpdate", async (oldMember, newMember) => {
+        try {
+          const { createChannel, deleteChannel } = require("./functions/voice 2");
+          if (oldMember.channel === null && newMember.channel !== null) {
+            if (newMember.channel.id == "986259951792050186")
+              await createChannel(newMember);
+          } else if (newMember.channel === null) {
+            await deleteChannel(oldMember);
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      });
+
+
 
 client.login(token)
